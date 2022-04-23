@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC   
+     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"   
+     "http://struts.apache.org/dtds/struts-2.0.dtd">
+     
+     
+<struts>
+    <package name="liu" extends="struts-default">
+        <global-results>
+            <result name="succeed">/common/succeed.jsp</result>
+            <result name="successAdd">/common/add_success.jsp</result>
+            <result name="successDel">/common/del_success.jsp</result>
+            <result name="successUpdate">/common/update_success.jsp</result>
+        </global-results>
+        
+        <action name="upload" class="com.util.upload" method="upload">
+             <result name="success">/upload/upload_re.jsp</result>
+        </action>
+        
+        
+        <action name="adminAdd" class="adminAction" method="adminAdd">
+        </action>
+        <action name="adminDel" class="adminAction" method="adminDel">
+        </action>
+        <action name="adminManage" class="adminAction" method="adminManage">
+            <result name="success">/admin/admin/adminManage.jsp</result>
+        </action>
+        
+        
+        <action name="qiyexinxi" class="qiyexinxiAction" method="qiyexinxi">
+            <result>/admin/qiyexinxi/qiyexinxi.jsp</result>
+        </action>
+        <action name="qiyexinxiUp" class="qiyexinxiAction" method="qiyexinxiUp">
+        </action>
+        <action name="qiyexinxi_kehu" class="qiyexinxiAction" method="qiyexinxi_kehu">
+            <result>/akehu/qiyexinxi/qiyexinxi.jsp</result>
+        </action>
+        
+        
+        
+        <action name="orgMana" class="orgAction" method="orgMana">
+            <result name="success">/admin/org/orgMana.jsp</result>
+        </action>
+        <action name="addOrg" class="orgAction" method="addOrg">
+        </action>
+        <action name="delOrg" class="orgAction" method="delOrg">
+            <result name="haveChildOrganization">/admin/org/haveChildOrganization.jsp</result>
+        </action>
+        <action name="orgAll" class="orgAction" method="orgAll">
+            <result name="success">/admin/org/orgAll.jsp</result>
+        </action>
+        <action name="kehuAdd" class="kehuAction" method="kehuAdd">
+        </action>
+        <action name="kehuDel" class="kehuAction" method="kehuDel">
+        </action>
+        <action name="kehuMana" class="kehuAction" method="kehuMana">
+            <result name="success">/admin/kehu/kehuMana.jsp</result>
+        </action>
+        <action name="kehuEditPre" class="kehuAction" method="kehuEditPre">
+            <result name="success">/admin/kehu/kehuEditPre.jsp</result>
+        </action>
+        <action name="kehuEdit" class="kehuAction" method="kehuEdit">
+        </action>
+        <action name="kehuSearch" class="kehuAction" method="kehuSearch">
+            <result name="success">/admin/kehu/kehuMana.jsp</result>
+        </action>
+        <action name="kehuExcel" class="kehuAction" method="kehuExcel">
+             <result name="success"  type="stream">
+                  <param name="contentType">application/vnd.ms-excel</param>
+                  <param name="contentDisposition">attachment;filename="${filename}"</param>
+                  <param name="inputName">inputStream</param>  
+                  <param name="bufferSize">4094</param>
+             </result>
+        </action>
+
+        
+    </package>
+</struts>
